@@ -7,6 +7,11 @@ import scrapy
 
 
 class MyscrapyItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+  # define the fields for your item here like:
+  # name = scrapy.Field()
+  # pass
+
+  # 對應 quotes.py -> d
+  text = scrapy.Field()
+  author = scrapy.Field()
+  tags = scrapy.Field()

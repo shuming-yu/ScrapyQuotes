@@ -9,5 +9,8 @@ from itemadapter import ItemAdapter
 
 
 class MyscrapyPipeline:
-    def process_item(self, item, spider):
-        return item
+  def process_item(self, item, spider):
+    print('===== MyscrapyPipeline.process_item() =====')
+    print(item)
+    print('=================')
+    return item
