@@ -1,10 +1,25 @@
 import scrapy
-
+from scrapy_selenium import SeleniumRequest
+from selenium import webdriver
+import pandas as pd
+from time import sleep
 
 class QuotesSpider(scrapy.Spider):
+  driver = webdriver.Chrome()
+  driver.get('https://quotes.toscrape.com/page/1/')
+  sleep(10)
+
   name = "quotes"
   allowed_domains = ["quotes.toscrape.com"]
-  start_urls = ["https://quotes.toscrape.com"]
+  # start_urls = ["https://quotes.toscrape.com"]
+
+  def start_requests(self):
+    url='https://quotes.toscrape.com/'
+    yield SeleniumRequest(
+      url=url,
+      callback=self.parse,
+      wait_time=10
+    )
 
   def parse(self, response):
       print('===== parse(self, response) =====')
@@ -29,5 +44,7 @@ class QuotesSpider(scrapy.Spider):
         yield response.follow(next_page, callback=self.parse)
 
       print('===========')
+
+  driver.close()
 
       # pass

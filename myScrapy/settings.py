@@ -54,6 +54,13 @@ ROBOTSTXT_OBEY = True
 #DOWNLOADER_MIDDLEWARES = {
 #    "myScrapy.middlewares.MyscrapyDownloaderMiddleware": 543,
 #}
+DOWNLOADER_MIDDLEWARES = {
+  'scrapy_selenium.SeleniumMiddleware': 800
+}
+
+SELENIUM_DRIVER_NAME = 'chrome'  #瀏覽器名稱
+# SELENIUM_DRIVER_EXECUTABLE_PATH = '/Code/Scrapy/myScrapy/myScrapy/chromedriver'  #驅動程式路徑
+SELENIUM_DRIVER_ARGUMENTS = ['--headless'] # Headless模式啟動
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
