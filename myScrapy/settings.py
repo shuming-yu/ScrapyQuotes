@@ -58,8 +58,11 @@ DOWNLOADER_MIDDLEWARES = {
   'scrapy_selenium.SeleniumMiddleware': 800
 }
 
+from shutil import which
+
 SELENIUM_DRIVER_NAME = 'chrome'  #瀏覽器名稱
-# SELENIUM_DRIVER_EXECUTABLE_PATH = '/Code/Scrapy/myScrapy/myScrapy/chromedriver'  #驅動程式路徑
+SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver/chromedriver')
+# SELENIUM_DRIVER_EXECUTABLE_PATH = 'chromedriver'  #驅動程式路徑
 SELENIUM_DRIVER_ARGUMENTS = ['--headless'] # Headless模式啟動
 
 # Enable or disable extensions

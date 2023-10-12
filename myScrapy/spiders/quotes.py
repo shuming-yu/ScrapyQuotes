@@ -5,9 +5,9 @@ import pandas as pd
 from time import sleep
 
 class QuotesSpider(scrapy.Spider):
-  driver = webdriver.Chrome()
-  driver.get('https://quotes.toscrape.com/page/1/')
-  sleep(10)
+  # driver = webdriver.Chrome()
+  # driver.get('https://quotes.toscrape.com/page/1/')
+  # sleep(10)
 
   name = "quotes"
   allowed_domains = ["quotes.toscrape.com"]
@@ -45,6 +45,6 @@ class QuotesSpider(scrapy.Spider):
 
       print('===========')
 
-  driver.close()
+  # driver.close()
 
       # pass
